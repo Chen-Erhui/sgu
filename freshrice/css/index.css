@@ -1,0 +1,41 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+body,html{
+	width: 100%;
+}
+.content{
+	width: 96%;
+	margin-left: 2%;
+	max-width: 720px;
+	margin: 0 auto;
+}
+.content img{
+	height: 100%;
+}
+.header{
+	width: 100%;
+	height: 40px;
+	margin-top: 10px;
+}
+.main{
+	width: 96%;
+	margin-left: 2%;
+	margin-top: 10px;
+}
+.main>img{
+	width: 100%;
+}
+.fgx{
+	width: 100%;
+	margin-top: 15px;
+}
+.ad{
+	text-align: center;
+	font-size: 18px;
+}
+.ewm{
+	display: flex;
+	justify-content: center;
+}

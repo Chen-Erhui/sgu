@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/my_pocket.css"/>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function resetFontSize() {
+				// 获取屏幕的宽度
+				var windowW = document.documentElement.clientWidth
+				// 是以iphone7作为参考
+				var scale = windowW / 375
+				var newSize = 25 * scale
+				document.getElementsByTagName('html')[0].style.fontSize = newSize + 'px'
+			}
+			// 当浏览器大小变化更新
+			window.addEventListener('resize', function() {
+				resetFontSize()
+			}, false)
+			resetFontSize()
+		</script>
+	</head>
+	<body>
+		<div class="all">
+			<div class="header">
+				<div class="money">￥0.01</div>
+			</div>
+		</div>
+	</body>
+</html>

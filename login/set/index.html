@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>设置</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/set.css"/>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/sha1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="all">
+			<div style="height: 20px;"></div>
+			<div class="set_password">
+				<ul>
+					<li>
+						<span class="pass_text">输入密码</span>
+						<input type="password" name="" id="password1" value="" />
+					</li>
+					<li>
+						<span class="pass_text">确认密码</span>
+						<input type="password" name="" id="password2" value="" />
+						<span class="wrong">x</span>
+					</li>
+					<li>
+						<!--<span class="pass_text" id="telyz">手机验证</span>-->
+						<input type="button" id="btn" value="验证码" onclick="sendemail()"/>
+						<input type="text" name="" id="yzm" value="" />
+					</li>
+					<li>
+						<button onclick="setpassword()">确认</button>
+						<button onclick="cancelset()">取消</button>
+					</li>
+				</ul>
+				<p style="text-align: left;color: lightcoral;font-size: 10px;margin-left: 8px;">*此功能仅限手机登陆用户</p>
+			</div>
+		</div>
+	</body>
+	<script src="js/set.js" type="text/javascript" charset="utf-8"></script>
+</html>

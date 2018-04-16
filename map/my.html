@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/map.css" />
+		<link rel="stylesheet" type="text/css" href="css/my.css" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/sha1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function resetFontSize() {
+				var windowW = document.documentElement.clientWidth
+				var scale = windowW / 320
+				var newSize = 10 * scale
+				document.getElementsByTagName('html')[0].style.fontSize = newSize + 'px'
+			}
+			window.addEventListener('resize', function() {
+				resetFontSize()
+			}, false)
+			resetFontSize()
+		</script>
+	</head>
+
+	<body>
+		<header class="dist_header">
+			<img src="img/header.jpg" />
+		</header>
+		<div class="person" style="height: 9rem;">
+			<ul>
+				<li class="wxpic"></li>
+				<li class="myname"></li>
+			</ul>
+		</div>
+		<div class="myorder">
+			<div class="checkorder" onclick="my_order()">
+				<div>
+					<span class="my_order"></span> 我的订单
+				</div>
+				<div style="color: rgb(110,110,110);">查看全部订单 ></div>
+			</div>
+			<!--<ul>
+				<li>
+					<span class="payment"></span>
+					<p>待付款</p>
+				</li>
+				<li>
+					<span class="sendgoods"></span>
+					<p>待发货</p>
+				</li>
+				<li>
+					<span class="makesure"></span>
+					<p>待确认</p>
+				</li>
+			</ul>-->
+		</div>
+		<div class="wallet">
+			<div class="mywallet">
+				<div>
+					<span class="my_wallet"></span> 我的钱包
+				</div>
+				<!--<div style="color: rgb(110,110,110);">账单 ></div>-->
+			</div>
+			<ul>
+				<li>
+					<span class="balance">0</span>
+					<p>余额</p>
+				</li>
+				<li>
+					<span class="coupon">0</span>
+					<p>米余量</p>
+				</li>
+				<li onclick="myscorelist()">
+					<span class="integral">0</span>
+					<p>积分</p>
+				</li>
+			</ul>
+		</div>
+		<div class="my_other">
+			<ul>
+				<li onclick="spread()">
+					<div>
+						<span class="spread"></span>我要推广
+					</div>
+					<span>点击生成二维码></span>
+				</li>
+				<!--<li>
+					<div>
+						<span class="cart"></span>购物车
+					</div>
+					<span>></span>
+				</li>-->
+				<!--<li onclick="address()">
+					<div>
+						<span class="mylocation"></span>地址管理
+					</div>
+					<span>></span>
+				</li>-->
+				<li>
+					<div>
+						<span class="telphone"></span>联系我们
+					</div>
+					<span>></span>
+					<a href="tel:4008115667" title="拾谷鸟咨询" style="display: block;width: 100%;height: 4rem;"></a>
+				</li>
+				<li>
+					<div>
+						<span class="option"></span>意见反馈
+					</div>
+					<span>></span>
+				</li>
+				<li onclick="logout()">
+					<div>
+						<span class="tuichu"></span>退出登陆
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div style="height: 8rem;"></div>
+	</body>
+	<script src="js/my.js" type="text/javascript" charset="utf-8"></script>
+</html>

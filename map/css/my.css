@@ -1,0 +1,180 @@
+body{
+	overflow: scroll;
+}
+.myorder{
+	width: 96%;
+	padding-left: 2%;
+	padding-right: 2%;
+	background-color: white;
+}
+.checkorder{
+	width: 100%;
+	height: 3rem;
+	line-height: 3rem;
+	border-bottom: 1px solid rgb(241,241,241);
+}
+.checkorder div{
+	display: inline-block;
+	font-size: 1.2rem;
+}
+.checkorder div:nth-child(1){
+	float: left;
+}
+.checkorder div:nth-child(2){
+	float: right;
+}
+.myorder ul{
+	width: 100%;
+	height: 5rem;
+	font-size: 0;
+}
+.myorder ul li{
+	width: 33.3%;
+	float: left;
+	margin-top: 0.5rem;
+}
+.myorder ul li span{
+	display: inline-block;
+	width: 2.5rem;
+	height: 2.5rem;
+}
+.myorder ul li p{
+	height: 1.5rem;
+	color: rgb(110,110,110);
+	font-size: 1rem;
+}
+.payment{
+	background: url(../img/payment.png) no-repeat;
+	background-size: 2.5rem;
+}
+.sendgoods{
+	background: url(../img/sendgoods.png) no-repeat;
+	background-size: 2.5rem;
+}
+.makesure{
+	background: url(../img/makesure.png) no-repeat;
+	background-size: 2.5rem;
+}
+.my_order{
+	display: inline-block;
+	width: 2rem;
+	height: 2rem;
+	background: url(../img/order.png) no-repeat;
+	background-size: 2rem;
+	float: left;
+	margin: 0.5rem 0.3rem 0 0.3rem;
+}
+.wallet{
+	width: 96%;
+	padding-left: 2%;
+	padding-right: 2%;
+	background-color: white;
+	margin-top: 1rem;
+}
+.mywallet{
+	width: 100%;
+	height: 3rem;
+	line-height: 3rem;
+	border-bottom: 1px solid rgb(241,241,241);
+}
+.mywallet div{
+	display: inline-block;
+	font-size: 1.2rem;
+}
+.mywallet div:nth-child(1){
+	float: left;
+}
+.mywallet div:nth-child(2){
+	float: right;
+}
+.my_wallet{
+	display: inline-block;
+	width: 2rem;
+	height: 2rem;
+	background: url(../img/money.png) no-repeat;
+	background-size: 2rem;
+	float: left;
+	margin: 0.5rem 0.3rem 0 0.3rem;
+}
+.wallet ul{
+	width: 100%;
+	height: 5rem;
+}
+.wallet ul li{
+	width: 33.3%;
+	float: left;
+}
+.wallet ul li span{
+	display: block;
+	height: 3rem;
+	color: rgb(220,0,12);
+	font-size: 1.5rem;
+	line-height: 3rem;
+}
+.wallet ul li p{
+	height: 2rem;
+	line-height: 2rem;
+	color: rgb(110,110,110);
+}
+.my_other{
+	width: 96%;
+	padding-left: 2%;
+	padding-right: 2%;
+	background-color: white;
+	margin-top: 1rem;
+}
+.my_other ul{
+	width: 100%;
+}
+.my_other ul li{
+	width: 100%;
+	height: 4rem;
+	border-bottom: 1px solid rgb(241,241,241);
+}
+.my_other ul li:nth-last-child(1){
+	border: none;
+}
+.my_other ul li div{
+	float: left;
+	line-height: 4rem;
+	font-size: 1.2rem;
+}
+.my_other ul li span{
+	display: block;
+	line-height: 4rem;
+	color: rgb(110,110,110);
+	float: right;
+}
+.my_other ul li div span{
+	float: left;
+}
+.spread,.cart,.mylocation,.telphone,.option,.tuichu{
+	display: inline-block;
+	width: 2rem;
+	height: 2rem;
+	margin: 1rem 0.3rem 0 0.3rem;
+}
+.spread{
+	background: url(../img/tuiguang.png) no-repeat;
+	background-size: 2rem;
+}
+.cart{
+	background: url(../img/cart.png) no-repeat;
+	background-size: 2rem;
+}
+.mylocation{
+	background: url(../img/my_location.png) no-repeat;
+	background-size: 2rem;
+}
+.telphone{
+	background: url(../img/telphone.png) no-repeat;
+	background-size: 2rem;
+}
+.option{
+	background: url(../img/opinion.png) no-repeat;
+	background-size: 2rem;
+}
+.tuichu{
+	background: url(../img/logout.png) no-repeat;
+	background-size: 2rem;
+}

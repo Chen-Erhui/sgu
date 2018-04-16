@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>积分明细</title>
+		<link rel="stylesheet" type="text/css" href="css/myscorelist.css"/>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/sha1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function resetFontSize() {
+				// 获取屏幕的宽度
+				var windowW = document.documentElement.clientWidth
+				// 是以iphone7作为参考
+				var scale = windowW / 375
+				var newSize = 25 * scale
+				document.getElementsByTagName('html')[0].style.fontSize = newSize + 'px'
+			}
+			// 当浏览器大小变化更新
+			window.addEventListener('resize', function() {
+				resetFontSize()
+			}, false)
+			resetFontSize()
+		</script>
+	</head>
+	<body>
+		<div class="all">
+			<div class="header">
+				<div class="headertop">积分明细<span>0 积分</span></div>
+				<ul>
+					<li class="allscore" onclick="allscore()">全部</li>
+					<li class="putinscore" onclick="putinscore()">收入</li>
+					<li class="putoutscore" onclick="putoutscore()">支出</li>
+				</ul>
+			</div>
+			<div class="content">
+				<ul>
+					
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script src="js/myscorelist.js" type="text/javascript" charset="utf-8"></script>
+</html>

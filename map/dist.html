@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>分销</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/map.css" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/sha1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function resetFontSize() {
+				var windowW = document.documentElement.clientWidth
+				var scale = windowW / 320
+				var newSize = 10 * scale
+				document.getElementsByTagName('html')[0].style.fontSize = newSize + 'px'
+			}
+			window.addEventListener('resize', function() {
+				resetFontSize()
+			}, false)
+			resetFontSize()
+		</script>
+	</head>
+
+	<body style="overflow: scroll;">
+		<header class="dist_header">
+			<img src="img/header.jpg" />
+		</header>
+		<div class="person">
+			<ul>
+				<li class="wxpic"></li>
+				<li class="myname">
+					
+				</li>
+			</ul>
+		</div>
+		<div class="fxmx">
+			<ul onclick="scorelist()">
+				<li><span id="fxmx_icon"></span>我的提成</li>
+				<li>查看明细 ></li>
+			</ul>
+		</div>
+		<div class="fx_intro">
+			<ul>
+				<li>
+					<p>今日提成(分)</p>
+					<h4 class="todycommission">0</h4>
+				</li>
+				<li>
+					<p>总提成(分)</p>
+					<h4 class="commission">0</h4>
+				</li>
+			</ul>
+		</div>
+		<div class="my_tg">
+			<ul onclick="checklist()">
+				<li><span id="mytg_icon"></span>我的推广</li>
+				<li>查看明细 ></li>
+			</ul>
+		</div>
+		<div class="fx_intro">
+			<ul>
+				<li>
+					<p>今日新增(人)</p>
+					<h4 class="fxnum">0</h4>
+				</li>
+				<li>
+					<p>总推广(人)</p>
+					<h4 class="fxtotal">0</h4>
+				</li>
+			</ul>
+		</div>
+		<div class="lxkf">
+			<ul>
+				<li><span id="callme_icon"></span>联系客服</li>
+				<li>400-811-5667 </li>
+				<a href="tel:4008115667" title="拾谷鸟咨询" style="display: inline-block;position: absolute;width: 100%;height: 100%;top: 0;left: 0;"></a>
+			</ul>
+		</div>
+		<div style="height: 8rem;"></div>
+	</body>
+	<script src="js/my.js" type="text/javascript" charset="utf-8"></script>
+</html>

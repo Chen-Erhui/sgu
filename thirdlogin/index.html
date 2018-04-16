@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登陆</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/thirdlogin.css"/>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function resetFontSize() {
+				// 获取屏幕的宽度
+				var windowW = document.documentElement.clientWidth
+				// 是以iphone7作为参考
+				var scale = windowW / 375
+				var newSize = 25 * scale
+				document.getElementsByTagName('html')[0].style.fontSize = newSize + 'px'
+			}
+			// 当浏览器大小变化更新
+			window.addEventListener('resize', function() {
+				resetFontSize()
+			}, false)
+			resetFontSize()
+		</script>
+	</head>
+	<body>
+		<div class="prompt">
+			<div class="prompt_icon"></div>
+			<p>请绑定手机号码</p>
+		</div>
+		<div class="tel">
+			<input type="tel" name="tel" id="tel" value="" placeholder="请输入手机号码"/>
+		</div>
+		<div class="code">
+			<input type="text" name="codeinput" id="codeinput" value="" placeholder="请输入验证码"/>
+			<input onclick="sendemail()" type="button" name="codebtn" id="codebtn" value="验证码" />
+		</div>
+		<!--<div class="passworld1">
+			<input type="password" name="password1" id="password1" value="" placeholder="请输入密码"/>
+		</div>
+		<div class="passworld2">
+			<input type="password" name="password2" id="password2" value="" placeholder="请再次输入密码"/>
+		</div>-->
+		<div class="button" onclick="binding()">立即绑定</div>
+	</body>
+	<script src="js/thirdlogin.js" type="text/javascript" charset="utf-8"></script>
+</html>

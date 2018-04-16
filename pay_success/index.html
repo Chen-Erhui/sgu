@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>支付成功</title>
+		<link rel="stylesheet" type="text/css" href="css/weui.css"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			html,body{
+				width: 100%;
+				height: 100%;
+				text-align: center;
+			}
+			.weui-icon_msg{
+				display: table;
+  				margin: 6rem auto 1rem auto;
+			}
+			.icon-box_title{
+				text-align: center;
+				font-size: 1.5rem;
+				font-weight: normal;
+			}
+			.bottom{
+				width: 100%;
+				height: 4rem;
+				position: absolute;
+				bottom: 2rem;
+			}
+			.weui-icon-success,.weui-icon_msg{
+				margin-top: 0;
+			}
+			.page_bd,.page_bd_spacing{
+				padding-top: 6rem;
+			}
+		</style>
+		<script type="text/javascript">
+			function resetFontSize () {
+			  // 获取屏幕的宽度
+			  var windowW = document.documentElement.clientWidth
+			  // 是以iphone5作为参考
+			  var scale = windowW / 320
+			  var newSize = 10 * scale
+			  document.getElementsByTagName('html')[0].style.fontSize = newSize + 'px'
+			}
+			// 当浏览器大小变化更新
+			window.addEventListener('resize', function () {
+			  resetFontSize()
+			}, false)
+			resetFontSize()
+		</script>
+	</head>
+	<body>
+		<div class="page_bd page_bd_spacing">
+			<div class="icon-box">
+	            <i class="weui-icon-success weui-icon_msg"></i>
+	            <div class="icon-box_ctn">
+	                <h3 class="icon-box_title">支付成功，正在为您打米...</h3>
+	            </div>
+	        </div>
+        </div>
+        <div class="bottom">
+        	<a href="http://www.sgu6.com/map" class="weui-btn weui-btn_mini weui-btn_default">返回主页</a>
+        </div>
+	</body>
+</html>

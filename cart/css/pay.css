@@ -1,0 +1,182 @@
+html,body{
+	margin: 0;
+	padding: 0;
+}
+html,body,h1,h2,h3,h4,h5,p,ul,li,div,span{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: rgb(243,243,243);
+}
+.pay_header{
+	width: 100%;
+}
+.pay_header img{
+	width: 100%;
+}
+.order{
+	width: 100%;
+	height: 160px;
+	background-color: white;
+}
+.order h3{
+		height: 60px;
+		margin: 0;
+		line-height: 60px;
+		text-align: center;
+		font-size: 16px;
+		font-family: "微软雅黑";
+	}
+.order .money{
+		height: 50px;
+		/*background-color: yellow;*/
+		font-size: 30px;
+		text-align: center;
+		line-height: 5rem;
+	}
+.order .details{
+	height: 50px;
+}
+.order .details .details_nb{
+	width:288px;
+	height: 50px;
+	margin-left:14px;
+	line-height: 50px;
+	font-size: 16px;
+	font-family: "微软雅黑";
+	white-space: nowrap;
+}
+.order .details .details_nb div{
+	float: left;
+}
+.order .details .details_nb .details_content{
+	height: 50px;
+	width: 80%;
+	display: inline-block;
+	white-space: normal;
+	overflow: hidden;
+	margin: 0;
+	/*text-overflow: ellipsis;*/
+}
+.order .details .details_nb .details_content ul{
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+.order .details .details_nb .details_content ul>li{
+	list-style-type: none;
+	display: inline;
+}	
+.integral{
+	width: 100%;
+	height: 50px;
+	margin-top: 10px;
+	background-color: white;
+}
+.integral .integral_content{
+	width: 90%;
+	height: 50px;
+	margin-left: 5%;
+}
+.integral .integral_content ul{
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+.integral .integral_content ul li{
+	list-style-type: none;
+	float: left;
+}
+.integral .integral_content ul .wallet_pic{
+	width: 40px;
+	height: 40px;
+}
+.integral .integral_content ul .wallet_pic img{
+	width: 40px;
+	margin-top: 5px;
+}
+.integral .integral_content ul .my_integral{
+	width: 168px;
+	height: 50px;
+	font-family: "微软雅黑";
+}
+.integral .integral_content ul .my_integral h3{
+	height: 30px;
+	line-height: 30px;
+	font-size: 15px;
+}
+.integral .integral_content ul .my_integral p{
+	height: 20px;
+	font-size: 12px;
+	line-height: 20px;
+}
+.integral .integral_content ul .integral_btn{
+	width: 70px;
+	height: 50px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	float: right;
+}
+				
+.integral_pay{
+	width: 288px;
+	height: 50px;
+	margin-top: 10px;
+	margin-left: 1.4rem;
+}
+.integral_pay img{
+	height: 5rem;
+		
+}
+.alipay{
+	width: 28.875rem;
+	height: 5rem;
+	margin-left: 1.4rem;
+	margin-top: 8rem;
+}
+.alipay img{
+	height: 5rem;
+}
+.wx_pay{
+	width: 28.875rem;
+	height: 5rem;
+	margin-left: 1.4rem;
+	margin-top: 8rem;
+	display: none;
+}
+.wx_pay img{
+	height: 5rem;
+}
+.weui-switch-cp__box{
+	width: 5.2rem;
+	height: 3.2rem;
+	border-radius: 1.6rem;	
+}
+.weui-switch:before, .weui-switch-cp__box:before{
+	width: 5rem;
+	height: 3rem;
+}
+.weui-switch:after, .weui-switch-cp__box:after{
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+}
+.weui-switch:before, .weui-switch-cp__box:before{
+	border-radius: 1.5rem;
+}
+.weui-switch:checked:after, .weui-switch-cp__input:checked ~ .weui-switch-cp__box:after{
+	webkit-transform: translateX(2rem);
+  transform: translateX(2rem);
+}
+.aliform{
+	position: fixed;
+	z-index: 10;
+	opacity: 0;
+	bottom: 0;
+	width: 100%;
+	height: 60%;
+	background-color: gray;
+	display: none;
+}

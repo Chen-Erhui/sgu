@@ -1,0 +1,107 @@
+html,body{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: scroll;
+}
+p,h1,h2,h3,h4,div,ul,li{
+	margin: 0;
+	padding: 0;
+}
+.detail_all{
+	width: 100%;
+	height: 100%;
+}
+.detail_content{
+	width: 13.72rem;
+	height: 100%;
+	margin: 0 auto;
+}
+.detail_header{
+	border-bottom: 0.16rem solid rgb(242,243,247);
+}
+.img{
+	width: 8.8rem;
+	height: 8.8rem;
+	margin: 0 auto;
+	background: no-repeat;
+	background-size: 8.8rem;
+}
+.price_name{
+	height: 2rem;
+}
+.price_name p{
+	height: 1rem;
+	line-height: 1rem;
+	font-size: 0.64rem;
+}
+.introduce{
+	width: 100%;
+	height: 4.8rem;
+	text-align: center;
+	border-bottom: 0.16rem solid rgb(242,243,247);
+}
+.introduce h4{
+	font-size: 0.6rem;
+	line-height: 1rem;
+	font-weight: normal;
+}
+.introduce p{
+	font-size: 0.4rem;
+	line-height: 0.6rem;
+	color: rgb(166,166,166);
+}
+.choose{
+	width: 100%;
+	height: 1.92rem;
+	border-bottom: 0.16rem solid rgb(242,243,247);
+}
+.choose ul{
+	display: inline-block;
+	height: 1rem;
+	margin-top: 0.46rem;
+	float: left;
+}
+.choose ul li{
+	width: 1rem;
+	height: 1rem;
+	list-style: none;
+	display: inline-block;
+	border: 0.04rem solid rgb(159,159,159);
+	border-radius: 50%;
+	text-align: center;
+	line-height: 1rem;
+	font-size: 0.6rem;
+	float: left;
+	margin-right: 0.4rem;
+}
+.choose ul li:nth-child(2){
+	border: 0.04rem solid rgb(218,0,10);
+}
+.choose_right{
+	display: inline-block;
+	width: 8rem;
+	height: 100%;
+	float: right;
+}
+.choose span{
+	font-size: 0.5rem;
+	display: inline-block;
+	width: 3.36rem;
+	height: 1.04rem;
+	text-align: center;
+	line-height: 1.04rem;
+	margin-top: 0.44rem;
+}
+.addcart{
+	color: rgb(166,166,166);
+	border: 0.04rem solid rgb(166,166,166);
+	border-radius: 0.52rem;
+}
+.buydir{
+	color: white;
+	background-color: rgb(218,0,10);
+	border: 0.04rem solid rgb(218,0,10);
+	border-radius: 0.52rem;
+}

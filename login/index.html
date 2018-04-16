@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>登陆</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/axios.min.js"></script>
+		<script src="js/sha1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="header">
+			<img src="img/1511253210.jpg" />
+		</div>
+		<div class="all">
+			<div class="login_content">
+				<div class="phone_num">
+					<div class="phone_numleft" style="float: left;line-height: 49px;width: 65%;">
+						<span style="float: left;width: 30%;">手机号</span>
+						<input id='phone' type="tel" placeholder="输入手机号码" style="width: 50%;" />
+					</div>
+					<button class="yzmbtn">
+					    <input type="button" id="btn" value="验证码" onclick="sendemail()" style="float: right;"/>
+					</button>
+				</div>
+				<div class="num">
+					<div style="float: left;line-height: 50px;width: 70%;">
+						<span style="float: left;width: 30%;">验证码</span>
+						<input id="code" type="tel" placeholder="输入验证码" style="width: 50%;" />
+					</div>
+				</div>
+			</div>
+			<div class="register" onclick="beginregister()">登 陆</div>
+			<!--<div class="otherway">
+				<ul>
+					<li class="wx" onclick="wxlogin()"></li>
+					<li class="qq" onclick="qqlogin()"></li>
+					<li class="alipay" onclick="allogin()"></li>
+				</ul>
+			</div>-->
+			<!--登陆动画-->
+			<div class="spinner">
+			  <div class="bounce1"></div>
+			  <div class="bounce2"></div>
+			  <div class="bounce3"></div>
+			</div>
+		</div>
+	</body>
+	<script src="js/login.js" type="text/javascript" charset="utf-8"></script>
+</html>

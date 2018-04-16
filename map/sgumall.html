@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>商城</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/map.css" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/sha1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function resetFontSize() {
+				var windowW = document.documentElement.clientWidth
+				var scale = windowW / 320
+				var newSize = 10 * scale
+				document.getElementsByTagName('html')[0].style.fontSize = newSize + 'px'
+			}
+			window.addEventListener('resize', function() {
+				resetFontSize()
+			}, false)
+			resetFontSize()
+		</script>
+
+	</head>
+
+	<body>
+		<div class="content">
+			<ul class="products">
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		axios.get('http://api-dev.sgu6.com/goods/machine/757-0000002')
+			.then(function(data) {
+				var list = data.data
+				localStorage.products_list=JSON.stringify(list)
+				for(var i = 0; i < list.length; i++) {
+					$('.products').append(
+						"<li onclick=detail(" + i + ")>" +
+						"<img " + "src=" + list[i].photo[0].imgUrl + " />" +
+						"<p style='font-size: 1rem;text-align: left;'>" + "拾谷鸟" + list[i].name + "</p>" +
+						"<span style='text-align: left;float: left;color: red;font-size: 1.1rem;'>" + "￥" + list[i].price + "</span>" +
+						"<span style='text-align: right;color: lightgray;font-size: 1rem;text-decoration:line-through'>" + "市场价￥20" + "</span>" +
+						"</li>"
+					)
+				}
+			})
+
+		function detail(i) {
+			window.location.href = 'detail.html?num=' + i
+		}
+	</script>
+
+</html>

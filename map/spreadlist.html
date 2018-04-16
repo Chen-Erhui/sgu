@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的推广</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function resetFontSize() {
+				// 获取屏幕的宽度
+				var windowW = document.documentElement.clientWidth
+				// 是以iphone7作为参考
+				var scale = windowW / 375
+				var newSize = 25 * scale
+				document.getElementsByTagName('html')[0].style.fontSize = newSize + 'px'
+			}
+			// 当浏览器大小变化更新
+			window.addEventListener('resize', function() {
+				resetFontSize()
+			}, false)
+			resetFontSize()
+		</script>
+		<style type="text/css">
+			body,html {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				background: rgb(241, 241, 241);
+			}
+			.content{
+				width: 100%;
+				height: 21rem;
+			}
+			.content>p{
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: 2rem;
+				font-size: 0.6rem;
+				text-indent: 0.6rem;
+				line-height: 2rem;
+				background-color: #d81e06;
+				color: white;
+			}
+			ul {
+				width: 100%;
+				height: 100%;
+				padding: 0;
+				margin: 0;
+				overflow: scroll;
+			}
+			
+			ul li {
+				list-style: none;
+				width: 100%;
+				height: 1.5rem;
+				background-color: white;
+				border-top: 2px solid rgb(241, 241, 241);
+				text-indent: 0.6rem;
+				font-size: 0;
+			}
+			ul li span{
+				display: inline-block;
+				height: 1.5rem;
+				line-height: 1.5rem;
+				font-size: 0.5rem;
+				vertical-align: top;
+				color: #000000;
+				font-style: normal;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			.sprname{
+				width: 3.75rem;
+			}
+			.sprtime{
+				text-align: right;
+				width: 5rem;
+			}
+			.sprstyle{
+				width: 3.75rem;
+				text-align: center;
+			}
+			img{
+				width: 1.3rem;
+				height: 1.3rem;
+				margin-top: 0.1rem;
+			}
+			.nospri{
+				margin: 0;
+				height: 1.5rem;
+				font-size: 0.5rem;
+				text-align: center;
+				line-height: 1.5rem;
+				color: gray;
+			}
+			.total{
+				float: right;
+				display: inline-block;
+				margin-right: 0.6rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="content">
+			<p>推广明细<span class="total"></span></p>
+			<ul class="spread_list">
+				
+			</ul>
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var memberId = JSON.parse(localStorage.jurisdiction).userId
+		var URL = 'http://api-dev.sgu6.com'
+		axios.get(URL + '/member/branch/' + memberId)
+			.then(function(data) {
+				$('.total').text(data.data.length+' 人')
+				if(data.data.length==0){
+					$('.spread_list').append(
+							"<p class='nospri'>您还没有推广...</p>"
+						)
+				}else{
+					var spread_list = data.data
+					for(var i = 0; i < spread_list.length; i++) {
+						$('.spread_list').append(
+							"<li>" +"<img src="+spread_list[i].headImage+"/>"+
+							"<span class='sprname'>"+spread_list[i].username+"</span>" +
+							"<span class='sprstyle'>"+spread_list[i].introucerDesc+"</span>" +
+							"<span class='sprtime'>"+new Date(spread_list[i].createTime).getFullYear()+'-'+new Date(spread_list[i].createTime).getMonth()+'-'+new Date(spread_list[i].createTime).getDate()+' '+new Date(spread_list[i].createTime).getHours()+':'+new Date(spread_list[i].createTime).getMinutes()+"</span>" +
+							"</li>"
+						)
+					}
+				}
+			})
+	</script>
+
+</html>

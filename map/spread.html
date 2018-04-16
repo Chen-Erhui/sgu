@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>分享推广二维码</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/spread.css" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/sha1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function resetFontSize() {
+				var windowW = document.documentElement.clientWidth
+				var scale = windowW / 320
+				var newSize = 10 * scale
+				document.getElementsByTagName('html')[0].style.fontSize = newSize + 'px'
+			}
+			window.addEventListener('resize', function() {
+				resetFontSize()
+			}, false)
+			resetFontSize()
+		</script>
+	</head>
+
+	<body style="overflow: hidden;">
+		<div class="content">
+			<div class="cut"></div>
+			<div id="code"></div>
+			<div class="code_text">
+				<h3>拾谷鸟·自助鲜米机</h3>
+				<p>长按二维码分享给朋友</p>
+			</div>
+		</div>
+	</body>
+	<script src="js/my.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var spreadcode = JSON.parse(localStorage.jurisdiction).userId
+		axios({
+				method: "post",
+				async: false,
+				url: 'http://api-dev.sgu6.com/wx/qrcodeTicket',
+				data: {
+					"actionName": "QR_LIMIT_STR_SCENE",
+					"sceneStr": spreadcode
+				}
+			})
+			.then(function(data) {
+				var code = document.getElementById("code");
+				var img = document.createElement("img");
+				img.src = "https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=" + encodeURI(data.data.ticket)
+				code.appendChild(img);
+			})
+	</script>
+
+</html>

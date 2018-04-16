@@ -1,0 +1,118 @@
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+div,
+ul,
+li {
+	margin: 0;
+	padding: 0;
+}
+
+.all {
+	width: 100%;
+	height: 100%;
+	background-color: rgb(242, 243, 247);
+}
+
+.header {
+	width: 100%;
+	height: 3.52rem;
+	background-color: white;
+}
+
+.header ul {
+	width: 100%;
+	height: 1.76rem;
+}
+.headertop{
+	height: 1.76rem;
+	background-color: rgb(223,25,36);
+	color: white;
+	font-size: 0.62rem;
+	line-height: 1.76rem;
+	text-indent: 0.2rem;
+}
+.header ul li {
+	width: 33.33%;
+	height: 100%;
+	display: inline-block;
+	list-style: none;
+	line-height: 1.92rem;
+	text-align: center;
+	float: left;
+	font-size: 0.62rem;
+	box-sizing: border-box;
+}
+
+.header ul li:nth-child(1) {
+	color: rgb(242, 48, 48);
+	border-bottom: 2px solid rgb(223,25,36);
+	box-sizing: border-box;
+}
+
+.content {
+	width: 100%;
+	height: 17rem;
+	overflow-y: scroll;
+	border-top: 10px solid rgb(242, 243, 247);
+}
+
+.content ul {
+	width: 100%;
+	height: 100%;
+}
+
+.content ul li {
+	width: 100%;
+	height: 1.5rem;
+	background-color: white;
+	border-bottom: 3px solid rgb(242, 243, 247);
+	font-size: 0.5rem;
+	line-height: 1.5rem;
+	color: gray;
+}
+.content ul li span{
+	display: inline-block;
+	height: 100%;
+	text-align: center;
+	float: left;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.time{
+	width: 30%;
+}
+.memo{
+	width: 45%;	
+}
+.myscore{
+	width: 25%;
+}
+.headertop span{
+	display: inline-block;
+	float: right;
+	margin-right: 0.2rem;
+}
+.nomore{
+	text-align: center;
+	font-size: 0.5rem;
+	height: 1.5rem;
+	line-height: 1.5rem;
+}
+#more ,#more1,#more2,#more3{
+	text-align: center;
+	font-size: 0.5rem;
+	height: 1.5rem;
+	line-height: 1.5rem;
+}

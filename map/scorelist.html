@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的提成</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/sha1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function resetFontSize() {
+				// 获取屏幕的宽度
+				var windowW = document.documentElement.clientWidth
+				// 是以iphone7作为参考
+				var scale = windowW / 375
+				var newSize = 25 * scale
+				document.getElementsByTagName('html')[0].style.fontSize = newSize + 'px'
+			}
+			// 当浏览器大小变化更新
+			window.addEventListener('resize', function() {
+				resetFontSize()
+			}, false)
+			resetFontSize()
+		</script>
+		<style type="text/css">
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				background: rgb(241, 241, 241);
+				overflow: hidden;
+			}
+			
+			.all {
+				width: 100%;
+				height: 18rem;
+			}
+			
+			.all>p {
+				width: 100%;
+				height: 2rem;
+				font-size: 0.6rem;
+				text-indent: 0.6rem;
+				margin: 0;
+				padding: 0;
+				line-height: 2rem;
+				background-color: #d81e06;
+				color: white;
+			}
+			
+			ul {
+				width: 100%;
+				height: 100%;
+				padding: 0;
+				margin: 0;
+				overflow: scroll;
+			}
+			
+			ul li {
+				list-style: none;
+				width: 100%;
+				height: 1.5rem;
+				background-color: white;
+				border-top: 2px solid rgb(241, 241, 241);
+				text-indent: 0.2rem;
+			}
+			
+			ul li p {
+				display: inline-block;
+				width: 80%;
+				height: 100%;
+				float: left;
+				margin: 0;
+				line-height: 1.5rem;
+				font-size: 0.5rem;
+			}
+			ul li span {
+				display: inline-block;
+				width: 20%;
+				height: 100%;
+				float: left;
+				line-height: 1.5rem;
+				text-align: center;
+				font-size: 0.5rem;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			.time{
+				width: 4.14rem;
+				text-align: left;
+				margin-left: 0.6rem;
+			}
+			.memo{
+				width: 6.21rem;
+			}
+			.addscore{
+				width: 3.45rem;
+				text-align: right;
+				margin-right: 0.6rem;
+			}
+			#more {
+				text-align: center;
+				font-size: 0.5rem;
+				height: 1.5rem;
+				line-height: 1.5rem;
+			}
+			a{
+				text-decoration: none;
+				float: right;
+				margin-right: 0.6rem;
+				color: white;
+			}
+			.nospri{
+				margin: 0;
+				height: 1.5rem;
+				font-size: 0.5rem;
+				text-align: center;
+				line-height: 1.5rem;
+				color: gray;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="all">
+			<p>提成明细<a href="javascript:;">0 积分</a></p>
+			<ul class="spread_list">
+				
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var memberId = JSON.parse(localStorage.jurisdiction).userId
+		var URL = 'http://api-dev.sgu6.com'
+		var page = 1
+		axios.get(URL + '/scoreRecord/list?page=' + page + '&pageSize=10&memberId=' + memberId + '&saleRuleId=4a36c9c7f37d4c85b318a17108c2b97f')
+			.then(function(data) {
+				if(data.data.list.length == 0) {
+					$('.spread_list').append(
+							"<p class='nospri'>您还没有提成</p>"
+						)
+				} else if(data.data.list.length < 10) {
+					var spread_list = data.data.list
+					for(var i = 0; i < spread_list.length; i++) {
+						$('.spread_list').append(
+							"<li>" +
+							"<span class='time'>" + new Date(spread_list[i].createTime).getFullYear()+'-'+(new Date(spread_list[i].createTime).getMonth()+1)+'-'+new Date(spread_list[i].createTime).getDate()+' '+new Date(spread_list[i].createTime).getHours()+':'+new Date(spread_list[i].createTime).getMinutes()+"</span>" +
+							"<span class='memo'>" + spread_list[i].memo.slice(2,-5) + "</span>" +
+							"<span class='addscore'>" + spread_list[i].score + "</span>" +
+							"</li>"
+						)
+					}
+				} else {
+					var spread_list = data.data.list
+					for(var i = 0; i < spread_list.length; i++) {
+						$('.spread_list').append(
+							"<li>" +
+							"<span class='time'>" + new Date(spread_list[i].createTime).getFullYear()+'-'+(new Date(spread_list[i].createTime).getMonth()+1)+'-'+new Date(spread_list[i].createTime).getDate()+' '+new Date(spread_list[i].createTime).getHours()+':'+new Date(spread_list[i].createTime).getMinutes()+"</span>" +
+							"<span class='memo'>" + spread_list[i].memo.slice(2,-5) + "</span>" +
+							"<span class='addscore'>" + spread_list[i].score + "</span>" +
+							"</li>"
+						)
+					}
+					$('.spread_list').append("<p id='more'>加载更多</p>")
+				}
+			})
+		$('.spread_list').on('click', '#more', function() {
+			$('#more').remove()
+			page++
+			axios.get(URL + '/scoreRecord/list?page=' + page + '&pageSize=10&memberId=' + memberId + '&saleRuleId=4a36c9c7f37d4c85b318a17108c2b97f')
+				.then(function(data) {
+					if(data.data.list.length == 0) {
+						alert("没有更多了...")
+					} else if(data.data.list.length < 10) {
+						var spread_list = data.data.list
+						for(var i = 0; i < spread_list.length; i++) {
+							$('.spread_list').append(
+								"<li>" +
+								"<span class='time'>" + new Date(spread_list[i].createTime).getFullYear()+'-'+(new Date(spread_list[i].createTime).getMonth()+1)+'-'+new Date(spread_list[i].createTime).getDate()+' '+new Date(spread_list[i].createTime).getHours()+':'+new Date(spread_list[i].createTime).getMinutes()+"</span>" +
+								"<span class='memo'>" + spread_list[i].memo.slice(2,-5) + "</span>" +
+								"<span class='addscore'>" + spread_list[i].score + "</span>" +
+								"</li>"
+							)
+						}
+					} else {
+						var spread_list = data.data.list
+						for(var i = 0; i < spread_list.length; i++) {
+							$('.spread_list').append(
+								"<li>" +
+								"<span class='time'>" + new Date(spread_list[i].createTime).getFullYear()+'-'+(new Date(spread_list[i].createTime).getMonth()+1)+'-'+new Date(spread_list[i].createTime).getDate()+' '+new Date(spread_list[i].createTime).getHours()+':'+new Date(spread_list[i].createTime).getMinutes()+"</span>" +
+								"<span class='memo'>" + spread_list[i].memo.slice(2,-5) + "</span>" +
+								"<span class='addscore'>" + spread_list[i].score + "</span>" +
+								"</li>"
+							)
+						}
+						$('.spread_list').append("<p id='more'>加载更多</p>")
+					}
+				})
+		})
+		function getcommission(){
+			getLocalStorage()
+			var timestamp = new Date().getTime()
+			var nonce = Math.random().toString(36).substr(2, 6)
+			var sort = ([accessToken, timestamp, nonce]).sort()
+			var signature = sha1(sort[0] + sort[1] + sort[2])
+			axios({
+				method: "get",
+				url: URL + '/scoreRecord/'+memberId+'/4a36c9c7f37d4c85b318a17108c2b97f',
+				headers: {
+					sessionId: sessionId,
+					signature: signature,
+					nonce: nonce,
+					timestamp: timestamp,
+					requestId: ''
+				}
+			}).then(function(data){
+				if(data.data.errCode ==undefined){
+					$('.all>p>a').text(data.data.totalScore+' 积分')
+				}
+			})
+		}
+		getcommission()
+		function getLocalStorage() {
+			accessToken = JSON.parse(localStorage.jurisdiction).accessToken
+			sessionId = JSON.parse(localStorage.jurisdiction).id
+			memberId = JSON.parse(localStorage.jurisdiction).userId
+		}
+	</script>
+
+</html>

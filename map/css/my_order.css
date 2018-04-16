@@ -1,0 +1,105 @@
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+div,
+ul,
+li {
+	margin: 0;
+	padding: 0;
+}
+
+.all {
+	width: 100%;
+	height: 100%;
+	background-color: rgb(242, 243, 247);
+}
+
+.header {
+	width: 100%;
+	height: 1.92rem;
+	background-color: white;
+}
+
+.header ul {
+	width: 100%;
+	height: 100%;
+}
+
+.header ul li {
+	width: 25%;
+	height: 100%;
+	display: inline-block;
+	list-style: none;
+	line-height: 1.92rem;
+	text-align: center;
+	float: left;
+	font-size: 0.62rem;
+}
+
+.header ul li:nth-child(1) {
+	color: rgb(242, 48, 48);
+}
+
+.content {
+	width: 100%;
+	height: 19rem;
+	overflow-y: scroll;
+	border-top: 5px solid rgb(242, 243, 247);
+}
+
+.content ul {
+	width: 100%;
+	height: 100%;
+}
+
+.content ul li {
+	width: 100%;
+	height: 2.5rem;
+	background-color: white;
+	border-bottom: 3px solid rgb(242, 243, 247);
+	font-size: 0.5rem;
+	color: gray;
+}
+.content ul li p{
+	width: 100%;
+	height: 1.25rem;
+	line-height: 1.25rem;
+}
+.content ul li p span{
+	display: inline-block;
+	float: left;
+}
+.orderno{
+	text-indent: 0.6rem;
+}
+.money{
+	width: 3.65rem;
+	margin-left: 0.6rem;
+	text-align: left;
+}
+.time{
+	width: 6.5rem;
+	text-align: center;
+}
+.status{
+	width: 3.65rem;
+	text-align: right;
+	margin-right: 0.6rem;
+}
+#more ,#more1,#more2,#more3{
+	text-align: center;
+	font-size: 0.5rem;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	color: gray;
+}
